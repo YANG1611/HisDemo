@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Diagnostic</title>
+    <style type="text/css">
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+<form  role="form" method="post" th:action="@{/saveDiagnosticInfo}"  th:object="${diagnostic}">
+    <br>
+    <h3>Make Diagnostic </h3>
+    <br>
+    <label>PatientID</label><input type="text" id="name"   th:field="*{patientId}" >&nbsp;
+    <!--&nbsp;&nbsp;&nbsp;<label>Phone Number</label>&nbsp;-->
+    <!--&nbsp;&nbsp;&nbsp;<input type="text" id="phonenum"  th:field="*{phoneNum}" >&nbsp;<br/><br/>-->
+    <!--<label>DoctorID</label><input type="text" id="sex"  th:field="*{doctorId}" ><br/><br/>-->
+    <label>IllnessStatus</label><input type="text" id="age"  th:field="*{illnessStatus}">
+    <label >Medical Time</label><input type="date" id="idnumber"  th:field="*{medTime}"  ><br/><br/>
+    <label >Medical Set</label><input type="text" id="idnumber1"  th:field="*{medSet}"  >
+    <input value="Edit" type="button" id="edit">&nbsp;&nbsp;&nbsp;
+    <input value="Submit" type="submit" id="submitPersonalInfo" >
+</form>
+</div>
+</body>
+</html>

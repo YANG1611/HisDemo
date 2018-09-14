@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Appointment</title>
+    <style type="text/css">
+        .table{text-align: center;}
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+<center>
+    <h4 >Welcome&nbsp;Doctor</h4>
+</center>
+    <p>All Appointment</p>
+    <center>
+        <table border="1"  class="table"  >
+            <tr>
+                <th>orderId</th>
+                <th>departmentId</th>
+                <th>orderCost</th>
+                <th>orderHandleTime</th>
+                <th>orderStatus</th>
+                <th>orderTime</th>
+                <th>patientId</th>
+            </tr>
+
+            <tr th:each="obj : ${data}">
+                <td th:text="${obj.orderId}"></td>
+                <td th:text="${obj.departmentId}"></td>
+                <td th:text="${obj.orderCost}"></td>
+                <td th:text="${obj.orderHandleTime}"></td>
+                <td th:text="${obj.orderStatus}"></td>
+                <td th:text="${obj.orderTime}"></td>
+                <td th:text="${obj.patientId}"></td>
+            </tr>
+
+        </table>
+    </center>
+</div>
+</body>
+</html>

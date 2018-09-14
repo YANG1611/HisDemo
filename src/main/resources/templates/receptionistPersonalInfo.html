@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+    <p>Personal Info</p>
+    <center>
+        <table border="1" width="60%" class="table table-hover" id="mytable" >
+            <tr>
+                <th>EmployeeID</th>
+                <th>Name</th>
+                <th>Sex</th>
+                <th>Age</th>
+                <th>ID</th>
+                <th>PhoneNumber</th>
+                <th>LiveAddress</th>
+                <th>Birthplace</th>
+                <th>Nation</th>
+                <th>DepartmentName</th>
+                <th>TitleName</th>
+                <th>Salary</th>
+            </tr>
+
+            <tr th:each="obj : ${dataList}">
+                <td th:text="${obj.EmployeeID}"></td>
+                <td th:text="${obj.Name}"></td>
+                <td th:text="${obj.Sex}"></td>
+                <td th:text="${obj.Age}"></td>
+                <td th:text="${obj.ID}"></td>
+                <td th:text="${obj.PhoneNumber}"></td>
+                <td th:text="${obj.LiveAddress}"></td>
+                <td th:text="${obj.Birthplace}"></td>
+                <td th:text="${obj.Nation}"></td>
+                <td th:text="${obj.DepartmentName}"></td>
+                <td th:text="${obj.TitleName}"></td>
+                <td th:text="${obj.Salary}"></td>
+            </tr>
+
+        </table>
+    </center>
+
+    <hr color="blue">
+
+</div>
+</body>
+</html>

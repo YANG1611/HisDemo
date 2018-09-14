@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>find Order Record</title>
+    <style type="text/css">
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+    <center>
+        <h3 > Records of Order</h3>
+    </center>
+    <center>
+        <table border="1" width="60%" class="table"  >
+            <tr>
+                <th>Name</th>
+                <th>Sex</th>
+                <th>ID Number</th>
+                <th>Department</th>
+                <th>OrderTime</th>
+                <th>Cost</th>
+                <th>Status</th>
+                <th>HandleTime</th>
+            </tr>
+
+            <tr th:each="obj : ${dataList}">
+                <td th:text="${obj.patientName}"></td>
+                <td th:text="${obj.patientSex}"></td>
+                <td th:text="${obj.idNo}"></td>
+                <td th:text="${obj.departmentName}"></td>
+                <td th:text="${obj.orderTime}"></td>
+                <td th:text="${obj.orderCost}"></td>
+                <td th:text="${obj.orderStatus}"></td>
+                <td th:text="${obj.orderHandleTime}"></td>
+            </tr>
+
+        </table>
+    </center>
+</div>
+</body>
+</html>

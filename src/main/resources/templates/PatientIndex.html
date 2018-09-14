@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>HospitalMSDB Patient MainPage</title>
+    <style type="text/css">
+        .table{text-align: center;}
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 600px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+<center>
+    <h4 >Welcome&nbsp;you</h4>
+</center>
+    <p>Personal Information</p>
+        <center>
+    <table border="1" width="600px" class="table"  >
+        <tr>
+            <th>name</th>
+            <th>phoneNum</th>
+            <th>sex</th>
+            <th>age</th>
+            <th>ID&nbsp;Number</th>
+            <th>Medical&nbsp;History</th>
+
+        </tr>
+
+        <tr>
+            <td th:text="${patientBase.patientName}"></td>
+            <td th:text="${patientBase.phoneNum}"></td>
+            <td th:text="${patientBase.patientSex}"></td>
+            <td th:text="${patientBase.patientAge}"></td>
+            <td th:text="${patientBase.idNo}"></td>
+            <td th:text="${patientBase.patientPmdlh}"></td>
+        </tr>
+
+    </table>
+            <p>Avatar:</p>
+            <img width="100px" height="145px" th:src="@{'http://localhost:8080/'+${patientBase.imgAddress}}">
+        </center>
+
+</div>
+<script src="../static/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

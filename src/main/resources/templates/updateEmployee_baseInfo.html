@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Personal Information</title>
+    <style type="text/css">
+        .top {
+            display: flex;
+            width: 100%;
+            height: 40px;
+            background: #3498DB;
+            float: left;
+        }
+
+        /*background:url("../static/images/top.png");*/
+        .main {
+            width: 100%;
+            height: 700px;
+        }
+
+        h2 {
+            margin: 5px auto;
+            color: #ffffff;
+            font-family: "Times New Roman"
+        }
+
+    </style>
+</head>
+<body >
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+    <left>
+        <br>
+        <h3>Update Personal Information</h3>
+    </left>
+    <center>
+        <form role="form" method="post" th:action="@{/saveEmployee_baseInfo}" th:object="${employee_base}"
+              enctype="multipart/form-data">
+
+            <label>Name</label></td>
+            <input type="text" id="name" th:field="*{employeeName}"><br><br>
+            <label>Sex</label>
+            <input type="text" id="sex" th:field="*{employeeSex}"><br><br>
+            <!--<label>Age</label>-->
+            <!--<input type="text" id="age"  th:field="*{employeeAge}" value="0"><br><br>-->
+            <label>ID Number</label>
+            <input type="text" id="idnumber" th:field="*{id}"><br><br>
+            <label>Phone Number</label>
+            <input type="text" id="phoneNum" th:field="*{phoneNum}"><br><br>
+            <label>Address</label>
+            <input type="text" id="employeeLiveAddress" th:field="*{employeeLiveAddress}"><br><br>
+            <label>Birthplace</label>
+            <input type="text" id="employeeBirthplace" th:field="*{employeeBirthplace}"><br><br>
+            <label>Nation</label>
+            <input type="text" id="employeeNation" th:field="*{employeeNation}"><br><br>
+            <label>Age</label><input type="text" id="age" value="00" th:field="*{employeeAge}"><br/><br/>
+            <label>Upload picture</label>
+            <input type="file" id="imgFile" name="imgFile"><br><br>
+
+            <br><br>
+            <input value="Submit" type="submit" id="submitPersonalInfo">
+        </form>
+    </center>
+
+</div>
+</body>
+</html>

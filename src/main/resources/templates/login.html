@@ -1,0 +1,123 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<title>Client Login</title>
+<link href="../static/login/css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Client Login Form,Login Forms,Sign up Forms,Registration Forms,News latter Forms,Elements"./>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+</script>
+<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css' >
+<!--//webfonts-->
+<script>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</script>
+<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script>$(document).ready(function(c) {
+	$('.alert-close').on('click', function(c){
+		$('.message').fadeOut('slow', function(c){
+	  		$('.message').remove();
+            window.location.href='index';
+        });
+	});	  
+});
+</script>
+
+</head>
+<body>
+ <div class="shadow-forms">
+	<div class="message warning">
+		<div class="login-head">
+			 <div class="alert-close"> </div> 
+			 <h2>Client Login</h2>	
+		</div>
+		<div class="sub-head">
+			<h3>Your almost done ! One more step</h3>
+			<img src="../static/login/images/bbl.png" alt=""/>
+		</div>
+		<form role="form" method="post" th:action="@{/patientLogin}" th:object="${patient_pwd}">
+			<input type="text" class="text" value="Phone Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" th:field="*{phoneNum}">
+			<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" th:field="*{pwd}">
+			<div class="p-container">
+				<label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+				<a href="#">Forgot a Password ?</a>
+				<div class="clear"> </div>
+			</div>
+			<div class="p-container">
+				<a href="loginEmpl" target="_self" title="职工登录">Employee Login </a><label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+				<!--<a href="#">Forgot a Password ?</a>-->
+				<a href="loginAdmin" target="_self" title="管理员登录">Administrator Login </a>
+				<div class="clear"> </div>
+			</div>
+			<!--<div class="p-container">-->
+				<!---->
+				<!--&lt;!&ndash;<a href="#">Forgot a Password ?</a>&ndash;&gt;-->
+				<!--<div class="clear"> </div>-->
+			<!--</div>-->
+			<div class="submit">
+				<input type="submit" onclick="myFunction()" value="LOG IN" >
+			</div>
+				<span> </span>
+			<div class="buttons">
+				<h4>Login with your Facebook Or Twitter accounts</h4>
+				<ul>
+				    <li class="fb">
+						<a href="#" class="hvr-bounce-to-bottom">FACEBOOK</a>
+					</li>
+					<li class="twr">
+						<a href="#" class="hvr-bounce-to-top">TWITTER</a>
+					</li>
+					<div class="clear"> </div>
+				</ul>
+			</div>
+		</form >
+				<div class="sign-up">
+					<a href="#" class="sign-left">Want new account ?</a>
+					<a  class="signup play-icon popup-with-zoom-anim" href="#small-dialog2">Sign Up</a>
+					<!-- pop-up-box -->
+				<script type="text/javascript" src="js/modernizr.custom.min.js"></script>    
+				<link href="../static/login/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+				<script src="../static/login/js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<!--//pop-up-box -->
+				<div id="small-dialog2" class="mfp-hide">
+				<div class="signup">
+					<h3>Signup</h3>
+					<h4><a href="#">let's get started</a></h4>
+					<form role="form" method="post" th:action="@{/registerPatient}" th:object="${patient_pwd}" onsubmit="alert('注册成功，请登录！')">
+					<input type="text" class="email" placeholder="Phone Number" required="" th:field="*{phoneNum}"/>
+					<input type="password" placeholder="Password" required="" th:field="*{pwd}"/>
+					<input type="submit"  value="Signup"/>
+					</form>
+				</div>
+			</div>	
+			<script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>
+		</div>
+
+					<div class="clear"> </div>
+				</div>
+			
+		</div>
+	</div>
+<!--- footer -->
+<div class="footer">
+	<p>Copyright &copy; 2018.<a href="http://www.sit.edu.cn/s/97/t/300/main.htm" target="_blank" title="学校官网">SIT 6#514 </a>All rights reserved.</p>
+
+</div>
+</body>
+</html>

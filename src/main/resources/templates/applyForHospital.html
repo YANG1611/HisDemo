@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply For Hospital</title>
+    <style type="text/css">
+        table{text-align: center;}
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+<center>
+    <h4 >Welcome&nbsp;you</h4>
+</center>
+    <p>Registration For Disease</p>
+    <form role="form" method="post" th:action="@{/addOrderDetail}"  th:object="${orderDetail}">
+        &nbsp;&nbsp;&nbsp;<label style="vertical-align: top">ID Number   </label>&nbsp;
+        &nbsp;&nbsp;&nbsp;<input type="text" style="vertical-align: top" id="res_id" th:field="*{patientId}">&nbsp;
+        &nbsp;&nbsp;&nbsp;<label>DepartmentID</label>&nbsp;
+        &nbsp;&nbsp;&nbsp;<input type="text" id="res_dep" th:field="*{departmentId}">&nbsp;<br/><br/>
+        &nbsp;&nbsp;&nbsp;<label>Appointment Time</label>&nbsp;
+        &nbsp;&nbsp;&nbsp;<input type="date" id="res_Ordertime" th:field="*{orderTime}">&nbsp;
+        &nbsp;&nbsp;&nbsp;<label>Order Cost</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;<input type="text" id="orderCost" th:field="*{orderCost}">&nbsp;<br/><br/>
+        <!--&nbsp;&nbsp;&nbsp;<label>Order Status</label>-->
+        <!--&nbsp;&nbsp;&nbsp;<input type="button" value="No Pay" id="pay_status" >&nbsp;-->
+        <!--&nbsp;&nbsp;&nbsp;<input type="button" value="Pay Now" id="go_pay" >&nbsp;-->
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;<input value="Submit" type="submit">
+    </form>
+</div>
+<!--<script src="../static/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>-->
+<!--<script type="text/javascript">-->
+
+    <!--$('#go_pay').on('click',function () {-->
+
+        <!--$('#pay_status').attr('value','paid');-->
+        <!--$('#go_pay').attr('disabled','disabled');-->
+        <!--alert('Your Order Have Been Paid !');-->
+
+    <!--});-->
+
+<!--</script>-->
+</body>
+</html>

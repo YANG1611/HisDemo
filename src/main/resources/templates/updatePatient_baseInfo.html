@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>update personal information</title>
+    <style type="text/css">
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+<form  role="form" method="post" th:action="@{/savePatient_baseInfo}"  th:object="${patient_base}" enctype="multipart/form-data">
+    <br>
+    <br>
+  <label>Name</label><input type="text" id="name"   th:field="*{patientName}" >&nbsp;
+    <!--&nbsp;&nbsp;&nbsp;<label>Phone Number</label>&nbsp;-->
+    <!--&nbsp;&nbsp;&nbsp;<input type="text" id="phonenum"  th:field="*{phoneNum}" >&nbsp;<br/><br/>-->
+   <label>Sex</label><input type="text" id="sex"  th:field="*{patientSex}" >
+   <label>Age</label><input type="text" id="age"  th:field="*{patientAge}"><br/><br/>
+   <label >ID Number</label><input type="text" id="idnumber"  th:field="*{idNo}"  >
+    <br><br><label >Medical History</label><br>
+    <textarea  rows="10" cols="100"  placeholder="Message" id="message" th:field="*{patientPmdlh}"  ></textarea> <br><br>
+    <!--<input value="Edit" type="button" id="edit">&nbsp;&nbsp;&nbsp;-->
+    <label>Upload personal picture</label>
+    <input type="file" id="imgFile" name="imgFile"><br><br>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input value="Submit" type="submit" id="submitPersonalInfo" >
+</form>
+</div>
+</body>
+</html>

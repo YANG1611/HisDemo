@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>find medicine all</title>
+    <style type="text/css">
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+
+    </style>
+    <script src="../static/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function load(){
+
+
+
+//         $(document).ready(function(){
+// (
+//                 function(){
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:8080/findMedicineAllInfo",
+                    // data: {'id':$("#idNo").val(),'medId':$("#medId").val(),'medName':$("#medName").val(),
+                    //         'medSpeci':$("#medSpeci").val(),'medNum':$("#medNum").val(),'medPrice':$("#medPrice").val()
+                    // },
+                    data:{},
+                    success: function(result) {
+                        // alert("跳转成功！");
+                        var json=eval(result);
+                        // alert(json[0].userName);
+                        var table=document.getElementById("table");
+                        for(var i=0;i<json.length;i++){
+                            // alert(json[i].id+"-"+json[i].medId+"-"+json[i].medName+"-"+json[i].medSpeci+"-"+json[i].medNum+"-"+json[i].medPrice);
+                            var row=table.insertRow(table.rows.length);
+                            var c1=row.insertCell(0);
+                            c1.innerHTML=json[i].id;
+                            var c2=row.insertCell(1);
+                            c2.innerHTML=json[i].medId;
+                            var c3=row.insertCell(2);
+                            c3.innerHTML=json[i].medName;
+                            var c4=row.insertCell(3);
+                            c4.innerHTML=json[i].medNum;
+                            var c5=row.insertCell(4);
+                            c5.innerHTML=json[i].medSpeci;
+                            var c6=row.insertCell(5);
+                            c6.innerHTML=" ¥ "+json[i].medPrice;
+                        }
+
+                        // window.location="success.jsp";
+                    }
+                });
+            // });
+        // });
+        }
+
+    </script>
+</head>
+<body onload="load()">
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+<h3>
+    All drug information purchased
+</h3>
+
+<table id="table" border="1">
+    <thead>
+    <td>ID</td>
+    <td>MedicineId</td>
+    <td>Name</td>
+    <td>Quantity</td>
+    <td>Specification</td>
+    <td>Price</td>
+    </thead>
+</table>
+<!--<input type="button" value="提交" id="btnsub">-->
+</div>
+</body>
+</html>

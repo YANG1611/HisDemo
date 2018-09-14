@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>adminAddEmpl_titleInfo</title>
+    <style type="text/css">
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+<h3>Add Employee Title Information</h3>
+<center>
+
+    <form role="form" method="post" th:action="@{/adminAddEmpl_titleInfo}" th:object="${empl_title}">
+        &nbsp;&nbsp;&nbsp;<label style="vertical-align: top">EmployeeId</label>&nbsp;
+        &nbsp;&nbsp;&nbsp;<input type="text" style="vertical-align: top" id="res_id" th:field="*{employeeID}"><br/><br/>
+        &nbsp;&nbsp;&nbsp;<label>TitleId</label>&nbsp;
+        &nbsp;&nbsp;&nbsp;<input type="text" id="titleID" th:field="*{titleID}"><br/><br/>
+        <input value="Submit" type="submit">
+    </form>
+</center>
+</div>
+</body>
+</html>

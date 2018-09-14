@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagnostic Inspect Information</title>
+    <style type="text/css">
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main">
+    <h3>Diagnostic Inspect Information</h3>
+    <center>
+        <table border="1" width="60%" class="table table-hover" id="mytable" >
+            <tr>
+                <th>DiagnosticId</th>
+                <th>patientId</th>
+                <th>doctorId</th>
+                <th>illnessStatus</th>
+                <th>medTime</th>
+                <th>medSet</th>
+
+            </tr>
+
+            <tr th:each="obj : ${dataList}">
+                <td th:text="${obj.DiagnosticId}"></td>
+                <td th:text="${obj.patientId}"></td>
+                <td th:text="${obj.doctorId}"></td>
+                <td th:text="${obj.illnessStatus}"></td>
+                <td th:text="${obj.medTime}"></td>
+                <td th:text="${obj.medSet}"></td>
+            </tr>
+
+        </table>
+    </center>
+
+</div>
+</body>
+</html>

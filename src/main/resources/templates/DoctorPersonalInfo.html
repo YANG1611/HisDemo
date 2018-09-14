@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information</title>
+    <style type="text/css">
+        .top{ display: flex;width: 100%;height: 40px;background: #3498DB;float: left;}
+        /*background:url("../static/images/top.png");*/
+        .main{width: 100%;height: 700px;}
+        h2{margin:5px auto;color: #ffffff;font-family: "Times New Roman"}
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <left><h2> Hospital Management Information System</h2></left>
+</div>
+<div class="main"th:each="obj : ${dataList}">
+
+    <p>Personal Information</p>
+    <center>
+        <table border="1" width="60%" class="table table-hover" id="mytable" >
+            <tr>
+                <th>EmployeeID</th>
+                <th>Name</th>
+                <th>Sex</th>
+                <th>Age</th>
+                <th>ID</th>
+                <th>PhoneNumber</th>
+                <th>LiveAddress</th>
+                <th>Birthplace</th>
+                <th>Nation</th>
+                <th>DepartmentName</th>
+                <th>TitleName</th>
+                <th>Salary</th>
+            </tr>
+
+            <tr >
+                <td th:text="${obj.EmployeeID}"></td>
+                <td th:text="${obj.Name}"></td>
+                <td th:text="${obj.Sex}"></td>
+                <td th:text="${obj.Age}"></td>
+                <td th:text="${obj.ID}"></td>
+                <td th:text="${obj.PhoneNumber}"></td>
+                <td th:text="${obj.LiveAddress}"></td>
+                <td th:text="${obj.Birthplace}"></td>
+                <td th:text="${obj.Nation}"></td>
+                <td th:text="${obj.DepartmentName}"></td>
+                <td th:text="${obj.TitleName}"></td>
+                <td th:text="${obj.Salary}"></td>
+            </tr>
+            <tr></tr>
+
+        </table>
+        <p>Avatar:</p>
+        <!--<img width="100px" height="145px" src="http://localhost:8080/150100001.jpg">-->
+        <img width="100px" height="145px" th:src="@{'http://localhost:8080/'+${obj.imgAddress}}">
+    </center>
+
+</div>
+</body>
+</html>
